@@ -80,7 +80,7 @@ body {
 /* main view */
 #logo {
   background: url(../images/greenpeace_logo.png) no-repeat top left;
-  background-size: 216px auto;
+  background-size: 100px auto;
   height: 50px;
   position: relative;
   text-indent: -999em;
@@ -125,6 +125,12 @@ body {
 }
 
 footer {
-  background: #666;
-  border-top: 1px solid ;
+  background: transparent;
+  border-top: 1px solid #fff;
+  bottom: 0;
+  color: #fff;
+  height: 70px;
+  left: 0;
+  position: absolute;
+  right: 0;
 }
