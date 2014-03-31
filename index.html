@@ -21,7 +21,7 @@
   <!-- <link rel='stylesheet' href='style/font.css'> -->
   <!-- endbuild -->
 </head>
-<body data-ng-app='greenApp'>
+<body data-ng-app='greenApp' ng-controller='HomeCtrl'>
   <!--[if lt IE 7]>
     <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -32,12 +32,22 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
+  <div id='layer' class='noise' data-year={{curYear}} data-depth={{curDepth}}><p>ASDFASDFASDF</p></div>
   <div ng-view class='pure-g-r' ng-cloak></div>
-  <footer>
-    footer
+  <footer ng-hide='hideFooter'>
+    <ul>
+      <li>
+        <p>In {{curYear}} | Depth: {{curDepth}} </p>
+        <span class='beginning year'>2000</span><span class='ending year'>2100</span>
+        <slider id='slider' floor="2000" ceiling="2100" step="1" precision="0" ng-model="curYear"></slider>
+        <span class='beginning depth'>10</span><span class='ending depth'>100</span>
+        <slider id='slider2' floor="10" ceiling="100" step="10" precision="0" ng-model="curDepth"></slider>
+      </li>
+    </ul>
   </footer>
 
   <!-- 3rd party -->
+
   <script src='lib/angular/angular.min.js'></script>
   <script src='lib/angular/angular-route.min.js'></script>
   <script src='lib/angular/angular-resource.min.js'></script>
@@ -45,6 +55,10 @@
   <script src='lib/angular/angular-sanitize.min.js'></script>
   <script src='lib/angular/angular-touch.min.js'></script>
   <script src='lib/angular/angular-animate.min.js'></script>
+  <script src='lib/angular/angular-animate.min.js'></script>
+
+  <script src='lib/js/angular-slider.min.js'></script>
+  <script src='lib/js/jquery.min.js'></script>
 
   <!-- App -->
   <script src='scripts/app.js'></script>

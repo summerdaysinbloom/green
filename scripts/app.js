@@ -3,9 +3,11 @@
 /* App Module */
 var app = angular.module('greenApp', [
     'ngRoute',
+    'ngResource',
     'ngControllers',
     'ngAnimate',   
-    'ngDirectives'
+    'ngDirectives',
+    'uiSlider'
     // 'ngFilters',
 ]);
 
@@ -19,6 +21,11 @@ app.run(['$location', '$rootScope', '$timeout', function($location, $rootScope, 
         $rootScope.keywords = current.$$route.keywords;        
         $rootScope.description = current.$$route.description;
 
+        if($location.path() == '/') {
+            $rootScope.hideFooter = true;
+        } else {
+            $rootScope.hideFooter = false;
+        }
     });
 }]);
 
